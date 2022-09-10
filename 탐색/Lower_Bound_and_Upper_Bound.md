@@ -1,7 +1,7 @@
 Lower Bound는 배열에서 x 이상의 수가 처음으로 나오는 위치를 반환하는 알고리즘이고,  
 Upper Bound는 배열에서 x를 초과하는 수가 처음으로 나오는 위치를 반환하는 알고리즘이다.  
 
-Lower Bound, Upper Bound 알고리즘은 **오름차순으로 정렬된 배열**일 때 사용할 수 있다.
+Lower Bound, Upper Bound 알고리즘은 **정렬된 배열**일 때 사용할 수 있다.
 
 ### :blush: Lower Bound(하한)
 오름차순으로 정렬된 배열에서 Lower Bound의 반환 값은 특정 값 x 이상의 수가 처음으로 나오는 위치이다.  
