@@ -66,7 +66,7 @@ void era() {
   for (int i = 2; i <= n; i++) {
     if (sieve[i] > 0) continue;
     for (int j = i; j <= n; j += i)
-      sieve[j] = min(i, sieve[j]);
+      sieve[j] = sieve[j] > 0 ? min(i, sieve[j]) : i;
   }
 }
 
