@@ -39,27 +39,34 @@ int Upper_Bound(int x) {
 }
 ```
 
-### :hand_over_mouth: Lower Bound와 Upper Bound의 성질
+### :sunglasses: 시간복잡도
+O(logn)
 
-### 시간복잡도
-O(logn)  
+### :hand_over_mouth: Lower Bound와 Upper Bound의 성질
+lower bound와 upper bound를 이용하면 배열 내 x의 개수를 구할 수 있다. (배열에 x가 없어도 되고, 이때의 결과 값은 0이다.)  
+* 직접 구현한 함수  
+`Upper_Bound(x) - Lower_Bound(x)`  
+* C++ STL  
+`upper_bound(v.begin(), v.end(), x) - lower_bound(v.begin(), v.end(), x)`  
+
+우리는 배열이 정렬되어 있을 때 배열 내 x의 개수를 O(logn)에 구할 수 있다.
 
 ### :wink: in C++
 C++의 \<algorithm\> 헤더에서는 lower_bound와 upper_bound 함수를 제공한다. *(배열이 오름차순으로 정렬되어 있어야 함)*  
-lower_bound) vector → lower_bound(v.begin(), v.end(), x) / array → lower_bound(arr, arr + n, x)  
-upper_bound) vector → upper_bound(v.begin(), v.end(), x) / array → upper_bound(arr, arr + n, x)  
+lower_bound) vector → `lower_bound(v.begin(), v.end(), x)` / array → `lower_bound(arr, arr + n, x)`  
+upper_bound) vector → `upper_bound(v.begin(), v.end(), x)` / array → `upper_bound(arr, arr + n, x)`  
 직접 구현한 함수 Lower_Bound()와 Upper_Bound()는 반환 값이 인덱스인 반면,  
 C++의 STL에서 제공하는 함수 lower_bound()와 upper_bound()는 반환 값이 iterator이다.  
 즉 조건을 만족하는 인덱스가 있는 경우 해당 인덱스를 가리키는 iterator를,  
 조건을 만족하는 인덱스가 없는 경우 마지막 다음 칸을 가리키는 iterator(vector의 경우 v.end())를 반환한다.  
 따라서 iterator가 아닌 몇 번째 인덱스인지 알고 싶으면 반환 값에서 첫 번째 iterator를 빼주면 된다.  
-vector → lower_bound(v.begin(), v.end(), x) - v.begin() / array → lower_bound(arr, arr + n, x) - arr  
-(해당 인덱스 자체의 값을 알고 싶으면 *lower_bound(v.begin(), v.end(), x)로 쓰면 된다.)  
+vector → `lower_bound(v.begin(), v.end(), x) - v.begin()` / array → `lower_bound(arr, arr + n, x) - arr`  
+(해당 인덱스 자체의 값을 알고 싶으면 `*lower_bound(v.begin(), v.end(), x)`로 쓰면 된다.)  
 ※ Reference  
 [lower_bound](https://cplusplus.com/reference/algorithm/lower_bound/), 
 [upper_bound](https://cplusplus.com/reference/algorithm/upper_bound/)  
 
-set에서 lower_bound나 upper_bound를 쓰려면 바로 s.lower_bound(x) 또는 s.upper_bound(x)를 쓰면 된다.  
+set에서 lower_bound나 upper_bound를 쓰려면 바로 `s.lower_bound(x)` 또는 `s.upper_bound(x)`를 쓰면 된다.  
 set의 lower_bound와 upper_bound는 \<set\>에서 제공하고 있다.  
 ※ Reference  
 [set::lower_bound](https://cplusplus.com/reference/set/set/lower_bound/), 
