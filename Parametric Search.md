@@ -79,7 +79,7 @@ while-loop가 종료된 후 `check(param)`에서 `lo`와 `hi`가 가리키는 �
 <br/><br/>
 ### 😬 주의사항
 * `lo`, `hi` 초기 값 정의에 주의
-* overflow에 주의 (Binary Search를 참고)
+* `mid`의 overflow에 주의 (Binary Search의 주의사항을 참고)
 * 결정 함수 `check()` 구현에 주의 → 특히 부등호
 * 답의 범위가 정수처럼 이산적이거나 허용 오차 범위가 있어야 한다.<br/>Binary Search는 연속적인 범위에서 정답에 한없이 가까워질 수는 있지만 정확한 값은 구할 수 없기 때문이다.
 <br/><br/>
