@@ -125,7 +125,7 @@ int lenLIS() {
   return idx;
 }
 ```
-*lis를 vector로 선언한 경우*  
+:black_medium_square: lis를 vector로 선언한 경우  
 ```
 int lenLIS() {
   for (int i = 0; i < n; i++) {
