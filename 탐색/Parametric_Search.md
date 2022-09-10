@@ -37,7 +37,7 @@ lo < mid < hi인 mid를 lo 또는 hi에 대입하기 때문에 lo < hi이다.
 `param`이 구간 [`lo`, `hi`] 사이의 값일 때, `check(param)`은 `[false, false, ..., false, true, ..., true, true]` 또는 `[true, true, ..., true, false, ..., false, false]`여야 한다.  
 즉, 값이 바뀌는 부분(false → true 또는 true → false)이 한 번만 존재해야 한다. 이 부분이 2개 이상이면 Binary Search가 아닌 삼분 탐색 등 다른 방법으로 문제를 해결해야 한다.
 <br/><br/>
-### 😊 어떤 조건을 만족하는 `param`의 최솟값(=`answer`)을 찾는 문제
+### :blush: 어떤 조건을 만족하는 `param`의 최솟값(=`answer`)을 찾는 문제
 `check(param)`이 연속이므로 `param >= answer`에 대해 `check(param)`은 항상 `true`이다.<br/>
 `param`이 오름차순이므로 `check(param)`은 `[false, false, ..., false, true, ..., true, true]`이다.<br/>
 ```
@@ -53,11 +53,11 @@ while-loop가 종료된 후 `check(param)`에서 `lo`와 `hi`가 가리키는 �
 |---|---|---|:---:|:---:|---|---|---|
 ||||↑<br/>`lo`|↑<br/>`hi`|
 
-💗 `lo`와 `hi`의 초기 값을 정의할 때, **`lo` = 구간의 최솟값 - 1, `hi` = 구간의 최댓값**으로 정의해야 한다.<br/>
+:heartpulse: `lo`와 `hi`의 초기 값을 정의할 때, **`lo` = 구간의 최솟값 - 1, `hi` = 구간의 최댓값**으로 정의해야 한다.<br/>
 정답이 `hi`이므로 만약 `lo`를 구간의 최솟값으로 정의하면  
 반복문의 조건인 `lo + 1 < hi`에 의해 `hi`는 구간의 최솟값이 될 수 없으므로 정답이 구간의 최솟값인 경우 답을 얻을 수 없다.
 <br/><br/>
-### 😊 어떤 조건을 만족하는 `param`의 최댓값(=`answer`)을 찾는 문제
+### :blush: 어떤 조건을 만족하는 `param`의 최댓값(=`answer`)을 찾는 문제
 `check(param)`이 연속이므로 `param <= answer`에 대해 `check(param)`은 항상 `true`이다.<br/>
 `param`이 오름차순이므로 `check(param)`은 `[true, true, ..., true, false, ..., false, false]`이다.<br/>
 ```
@@ -73,17 +73,17 @@ while-loop가 종료된 후 `check(param)`에서 `lo`와 `hi`가 가리키는 �
 |---|---|---|:---:|:---:|---|---|---|
 ||||↑<br/>`lo`|↑<br/>`hi`|
 
-💗 `lo`와 `hi`의 초기 값을 정의할 때, **`lo` = 구간의 최솟값, `hi` = 구간의 최댓값 + 1**로 정의해야 한다.<br/>
+:heartpulse: `lo`와 `hi`의 초기 값을 정의할 때, **`lo` = 구간의 최솟값, `hi` = 구간의 최댓값 + 1**로 정의해야 한다.<br/>
 정답이 `lo`이므로 만약 `hi`를 구간의 최댓값으로 정의하면  
 반복문의 조건인 `lo + 1 < hi`에 의해 `lo`는 구간의 최댓값이 될 수 없으므로 정답이 구간의 최댓값인 경우 답을 얻을 수 없다.
 <br/><br/>
-### 😬 주의사항
+### :grimacing: 주의사항
 * `lo`, `hi` 초기 값 정의에 주의
 * `mid`의 overflow에 주의 (Binary Search의 주의사항을 참고)
 * 결정 함수 `check()` 구현에 주의 → 특히 부등호
 * 답의 범위가 정수처럼 이산적이거나 허용 오차 범위가 있어야 한다.<br/>Binary Search는 연속적인 범위에서 정답에 한없이 가까워질 수는 있지만 정확한 값은 구할 수 없기 때문이다.
 <br/><br/>
-### 😎 시간복잡도
+### :sunglasses: 시간복잡도
 Binary Search는 `while(lo + 1 < hi)`인 동안 `mid = (lo + hi) >> 1`를 이용해 [`lo`, `hi`]를 [`lo`, `mid`] 또는 [`mid`, `hi`]로 줄여나간다.  
 한 번의 loop에서 구간의 길이는 절반으로 줄어들기 때문에 최초 구간의 길이를 N이라 하면 while문의 실행 횟수는 O(logN)번이다.  
 while문에서 실행되는 `check(mid)`의 시간복잡도를 O(T)라고 하면, Parametric Search의 최종 시간복잡도는 O(T * logN)이다.
