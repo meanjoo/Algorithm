@@ -4,4 +4,5 @@
 [Lower Bound & Upper Bound](https://github.com/meanjoo/Algorithm/blob/main/%ED%83%90%EC%83%89/Lower_Bound_and_Upper_Bound.md)  
 
 ### :grinning: 수학
-소수
+소수  
+순열, 조합, 중복순열, 중복조합  
