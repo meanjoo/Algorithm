@@ -6,3 +6,6 @@
 ### :grinning: 수학
 [소수](https://github.com/meanjoo/Algorithm/blob/main/%EC%88%98%ED%95%99/prime.md)  
 순열, 조합, 중복순열, 중복조합  
+
+
+LIS(Longest Increasing Subsequence)
