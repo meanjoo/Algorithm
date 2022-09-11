@@ -119,7 +119,7 @@ int lenLIS() {
         lis[idx++] = arr[i];
       else
         lis[lower_bound(lis, lis + idx, arr[i]) - lis] = arr[i];
-        // lower_bound(lis, lis + idx, arr[i]) = arr[i];는 안 되나? 해보기
+        // *lower_bound(lis, lis + idx, arr[i]) = arr[i]; 도 가능
     }    
   }
   return idx;
