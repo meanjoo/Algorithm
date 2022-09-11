@@ -7,7 +7,8 @@
 |6|*2*|1|*5*|*7*|4|*8*|3|
 |---|---|---|---|---|---|---|---|
 
-위 수열에서 LIS는 [2, 5, 7, 8]이다. 뿐만 아니라 [1, 5, 7, 8]도 LIS이다. 즉 LIS가 반드시 하나로 결정되는 것은 아니다.
+위 수열에서 LIS는 [2, 5, 7, 8]이다. 뿐만 아니라 [1, 5, 7, 8]도 LIS이다. 즉 LIS가 반드시 하나로 결정되는 것은 아니다.  
+(따라서 LIS 문제라면 LIS의 길이를 구하도록 출제되거나, 수열을 구하는 문제라면 여러 개를 정답으로 인정하도록 출제된다.)
 
 LIS를 구하는 알고리즘은 O(n<sup>2</sup>) 시간에 동작하는 알고리즘과 O(n logn) 시간에 동작하는 알고리즘이 있다.  
 <br/><br/>
@@ -128,6 +129,7 @@ int lenLIS() {
 :black_medium_square: lis를 vector로 선언한 경우  
 ```
 int lenLIS() {
+  vector<int> lis;
   for (int i = 0; i < n; i++) {
     if (lis.empty())
       lis.push_back(arr[i]);
@@ -145,8 +147,78 @@ int lenLIS() {
 ```
 <br/><br/>
 ### :blush: O(n logn) 시간에 동작하는 알고리즘 - LIS의 길이와 수열 모두
+앞서 O(n logn)에 LIS의 길이를 구하는 방법을 알아보았다.  
+LIS의 길이뿐만 아니라 LIS를 이루는 부분 수열을 구하기 위해서는 아래의 과정을 거쳐야 한다.
 
+우선 LIS를 만드는 과정에서 각 원소들이 LIS의 몇 번째 위치에 들어가는지를 저장하는 index 배열이 추가로 필요하다.  
+수열 [3, 5, 2, 6, 1]의 lis와 index가 만들어지는 과정을 보자.  
+(0) lis = [ ], index = [ ]  
+(1) lis = [3], index = [1]  
+(2) lis = [3, 5], index = [1, 2]  
+(3) lis = [2, 5], index = [1, 2, 1]  
+(4) lis = [2, 5, 6], index = [1, 2, 1, 3]  
+(5) lis = [1, 5, 6], index = [1, 2, 1, 3, 1]  
 
-<br/><br/>
+이렇게 위 수열의 LIS 길이는 3이고, index 배열도 만들어졌다.  
+이제 index 배열의 뒤에서부터 구해진 LIS의 길이부터 1까지 감소시키면서 해당 길이를 갖는 인덱스를 찾는다.  
+처음으로 해당 길이가 나오는 index의 원소를 arr에서 뽑아낸 배열을 만들고, 이 배열을 뒤집은 것이 LIS를 이루는 부분 수열 중 하나이다.  
+ 
+|*arr*|3|5|2|6|1|
+|---|---|---|---|---|---|
+
+|*lis*|1|5|6|
+|---|---|---|---|
+
+|*index*|1|2|1|3|1|
+|---|---|---|---|---|---|
+
+만들어진 lis를 보면 arr의 LIS 길이는 3이라는 것을 알 수 있다. 3부터 1까지 index 배열의 뒤에서부터 탐색을 진행하자.  
+탐색의 종료는 1인 길이를 찾았을 때이고, LIS를 이루는 부분 수열을 real_lis라고 하자.  
+index[4] = 1 != 3이므로 넘어간다.  
+index[3] = 3 == 3이므로 real_lis에 arr[3]을 추가하고 찾는 길이를 1 감소시킨다. real_lis = [6]  
+index[2] = 1 != 2이므로 넘어간다.  
+index[1] = 2 == 2이므로 real_lis에 arr[1]을 추가하고 찾는 길이를 1 감소시킨다. real_lis = [6, 5]  
+index[0] = 1 == 1이므로 real_lis에 arr[0]을 추가하고 찾는 길이를 1 감소시킨다. real_lis = [6, 5, 3]  
+탐색이 종료되었으므로 real_lis를 reverse한 [3, 5, 6]이 우리가 찾는 LIS를 이루는 부분 수열이다.
+```
+// LIS의 길이를 반환하고 index 배열(전역)을 만드는 함수
+int lenLIS() {
+  vector<int> lis;
+  for (int i = 0; i < n; i++) {
+    if (lis.empty()) {
+      lis.push_back(arr[i]);
+      index[i] = 1;
+    }
+    else {
+      int sz = lis.size();
+      if (arr[i] > lis[sz - 1]) {
+        lis.push_back(arr[i]);
+        index[i] = sz + 1;
+      }
+      else {
+        int idx = lower_bound(lis.begin(), lis.end(), arr[i]) - lis.begin();
+        lis[idx] = arr[i];
+        index[i] = idx + 1;
+      }
+    }
+  }
+  return (int)lis.size();
+}
+
+// index 배열(전역)과 LIS의 길이(param)를 이용해서 LIS를 이루는 부분 수열을 반환하는 함수
+vector<int> getLIS(int len) {
+  vector<int> r;
+  for (int i = n - 1; i >= 0; i--) {
+    if (index[i] == len) {
+      r.push_back(arr[i]);
+      --len;
+    }
+    if (len < 0)
+      break;
+  }
+  reverse(r.begin(), r.end());
+  return r;
+}
+```
 <br/><br/>
 [참고](https://rebro.kr/33)
