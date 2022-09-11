@@ -12,4 +12,4 @@ modulo 연산의 사칙연산
 [CCW(Counter Clockwise)](https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/CCW.md)  
 
 
-LIS(Longest Increasing Subsequence)
+[LIS(Longest Increasing Subsequence)](https://github.com/meanjoo/Algorithm/blob/main/LIS.md)
