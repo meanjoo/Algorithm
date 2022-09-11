@@ -12,6 +12,7 @@ CCW는 외적(cross product, vector product)을 이용하므로 외적에 대해
 
 오른손의 엄지를 제외한 네 손가락을 시작 벡터(**a**) 방향으로 두고, 이 손가락들을 다른 벡터(**b**)쪽을 향하게 감았을 때  
 엄지의 방향이 외적 방향이다.  
+<img src="https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/explanation.jpg" width="700" height=auto/>
 
 * 반시계 방향 회전 ⇔ z 성분이 양수
 <img src="https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/ccw.jpg" width="400" height=auto/>
