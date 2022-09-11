@@ -8,5 +8,8 @@
 순열, 조합, 중복순열, 중복조합  
 modulo 연산의 사칙연산  
 
+### :grinning: 기하
+CCW(Counter Clockwise)  
+
 
 LIS(Longest Increasing Subsequence)
