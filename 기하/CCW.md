@@ -32,18 +32,23 @@ CCW는 외적(cross product, vector product)을 이용하므로 외적에 대해
 평면 상의 점 A, B, C가 순서대로 어떤 방향을 이루고 있는지는 점 3개를 순서대로 이은 두 선분의 방향과 같고, 결국 2차원 벡터의 경우와 같다.  
 (∵ 벡터는 점 A에서 점 B로 향하는 방향과 크기가 주어진 선분)
 
-2차원 벡터를 통해 평면 상의 세 점 A, B, C가 어떤 방향을 이루고 있는지 구하는 방법은 두 가지가 있다.  
+2차원 벡터를 통해 평면 상의 세 점 A(x<sub>1</sub>, y<sub>1</sub>), B(x<sub>2</sub>, y<sub>2</sub>), C(x<sub>3</sub>, y<sub>3</sub>)가 어떤 방향을 이루고 있는지 구하는 방법은 두 가지가 있다.  
 ① 점 A를 시점으로 하는 점 A에 대한 점 B의 위치벡터 **AB**와 점 A에 대한 점 C의 위치벡터 **AC**의 외적  
+<img src="https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/cp1.jpg" width="600" height=auto/>
 
-② 벡터 **AB**와 벡터 **BC**의 외적
+② 벡터 **AB**와 벡터 **BC**의 외적  
+<img src="https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/cp2.jpg" width="600" height=auto/>
 
-①과 ②의 외적은 다음과 같다.
+①과 ②의 외적은 다음과 같다.  
+<img src="https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/cp_result1.jpg" width="600" height=auto/>
 
-①과 ②의 z 성분을 각각 풀어서 써보면 결국 둘은 같은 값을 나타내고 있음을 알 수 있다.
+①과 ②의 z 성분을 각각 풀어서 써보면 결국 둘은 같은 값을 나타내고 있음을 알 수 있다.  
+<img src="https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/cp_result2.jpg" width="700" height=auto/>
 
-위처럼 어렵게 빼는 성분의 순서를 기억해서 계산하지 않고, 신발끈 공식을 이용하면 쉽게 계산할 수 있다.  
+:heavy_check_mark: 위처럼 어렵게 빼는 성분의 순서를 기억해서 계산하지 않고, 신발끈 공식을 이용하면 쉽게 계산할 수 있다.  
 단, 이때 공식에 작성하는 점의 순서를 주의해야 한다. ***어떤 방향으로 놓여있는지 알아낼 세 점의 순서대로 작성***해야 한다.  
 마찬가지로 구해진 값의 부호에 따라 세 점의 방향 관계를 알 수 있다. (양수: 반시계, 음수: 시계, 0: 일직선/평행)  
+<img src="https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/formal2.jpg" width="900" height=auto/>
 ```
 typedef struct point {
   int x, y;
@@ -60,4 +65,4 @@ int CCW(Point p1, Point p2, Point p3) {
 }
 ```
 코드를 작성할 때 고려해야 할 부분은 Point와 result의 자료형이다.  
-신발끈 공식에서 점들이 곱해지므로 overflow가 발생할 가능성이 있는지 생각해봐야 한다.
+신발끈 공식에서 점들이 곱해지므로 overflow가 발생할 가능성이 있는지 생각해봐야 한다. (int로 커버가능한지, 안 되면 long long)
