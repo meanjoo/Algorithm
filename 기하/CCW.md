@@ -24,7 +24,7 @@ CCW는 외적(cross product, vector product)을 이용하므로 외적에 대해
 외적의 크기는 |a×b| = |a||b|sin&theta;이다. &theta;=0이거나 &theta;=&pi;일 때 sin&theta;=0이므로 외적이 0이다.
 <img src="https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/parallel.jpg" width="430" height=auto/>
 
-즉 2차원 벡터 2개에 신발끈 공식을 활용하면 이 값의 부호에 따라 다음 벡터의 진행 방향을 알 수 있다.
+즉 2차원 벡터 2개를 2×2 행렬식을 구하는 것과 비슷한 방식으로 계산하면 이 값의 부호에 따라 다음 벡터의 진행 방향을 알 수 있다.
 <img src="https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/formal.jpg" width="400" height=auto/>
 <br/><br/>
 ### :blush: 평면 위 세 점의 방향 관계
@@ -39,7 +39,7 @@ CCW는 외적(cross product, vector product)을 이용하므로 외적에 대해
 
 ①과 ②의 외적은 다음과 같다.
 
-두 경우의 z 성분을 각각 풀어서 써보면 결국 둘은 같은 값을 나타내고 있음을 알 수 있다.
+①과 ②의 z 성분을 각각 풀어서 써보면 결국 둘은 같은 값을 나타내고 있음을 알 수 있다.
 
 위처럼 어렵게 빼는 성분의 순서를 기억해서 계산하지 않고, 신발끈 공식을 이용하면 쉽게 계산할 수 있다.  
 단, 이때 공식에 작성하는 점의 순서를 주의해야 한다. ***어떤 방향으로 놓여있는지 알아낼 세 점의 순서대로 작성***해야 한다.  
