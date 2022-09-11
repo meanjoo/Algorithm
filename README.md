@@ -9,7 +9,7 @@
 modulo 연산의 사칙연산  
 
 ### :grinning: 기하
-CCW(Counter Clockwise)  
+[CCW(Counter Clockwise)](https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/CCW.md)  
 
 
 LIS(Longest Increasing Subsequence)
