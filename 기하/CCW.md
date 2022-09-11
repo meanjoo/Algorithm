@@ -64,5 +64,5 @@ int CCW(Point p1, Point p2, Point p3) {
     return 0;
 }
 ```
-코드를 작성할 때 고려해야 할 부분은 Point와 result의 자료형이다.  
+코드를 작성할 때 고려해야 할 부분은 Point와 (특히) result의 자료형이다.  
 신발끈 공식에서 점들이 곱해지므로 overflow가 발생할 가능성이 있는지 생각해봐야 한다. (int로 커버가능한지, 안 되면 long long)
