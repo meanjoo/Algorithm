@@ -8,8 +8,7 @@ CCW는 외적(cross product, vector product)을 이용하므로 외적에 대해
 
 <img src="https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/crossproduct.jpg" width="800" height=auto/>
 
-2차원 벡터의 외적에서 z 성분인 ***x<sub>1</sub>y<sub>2</sub> - y<sub>1</sub>x<sub>2</sub>*** 의 부호에 따라  
-**a** 뒤에 **b**를 놓았을 때 어느 방향(시계 or 반시계)으로 회전하는지 알 수 있다.
+2차원 벡터의 외적에서 z 성분인 ***x<sub>1</sub>y<sub>2</sub> - y<sub>1</sub>x<sub>2</sub>*** 의 부호에 따라 **a** 뒤에 **b**를 놓았을 때 어느 방향(시계 or 반시계)으로 회전하는지 알 수 있다.
 
 * 반시계 방향 회전 ⇔ z 성분이 양수
 * 시계 방향 회전 ⇔ z 성분이 음수
