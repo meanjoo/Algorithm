@@ -20,5 +20,29 @@ CCW는 외적(cross product, vector product)을 이용하므로 외적에 대해
 * 시계 방향 회전 ⇔ z 성분이 음수
 <img src="https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/cw.jpg" width="430" height=auto/>
 
-* 일직선(평행) ⇔ z 성분이 0
+* 일직선(평행) ⇔ z 성분이 0  
+외적의 크기는 |a×b| = |a||b|sin&theta;이다. &theta;=0이거나 &theta;=&pi;일 때 sin&theta;=0이므로 외적이 0이다.
 <img src="https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/parallel.jpg" width="430" height=auto/>
+
+2차원 벡터 2개에 신발끈 공식을 활용하면 이 값의 부호에 따라 다음 벡터의 진행 방향을 알 수 있다.
+<img src="https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/formal.jpg" width="400" height=auto/>
+<br/><br/>
+### :blush: 평면 위 세 점의 방향 관계
+주어진 정보가 2차원 상의 벡터가 아닌 2차원 상의 점인 경우에 대해 알아보자.  
+평면 상의 점 A, B, C가 순서대로 어떤 방향을 이루고 있는지는 점 3개를 순서대로 이은 선의 방향과 같다.
+
+```
+typedef struct point {
+  int x, y;
+}Point;
+
+int CCW(Point p1, Point p2, Point p3) {
+  int result = p1.x * p2.y + p2.x * p3.y + p3.x * p1.y - p2.x * p1.y - p3.x * p2.y - p1.x * p3.y;
+  if (result > 0)		// ccw
+    return 1;
+  else if (result < 0)	// cw
+    return -1;
+  else	// parallel
+    return 0;
+}
+```
