@@ -12,7 +12,7 @@
 
 LIS를 구하는 알고리즘은 O(n<sup>2</sup>) 시간에 동작하는 알고리즘과 O(n logn) 시간에 동작하는 알고리즘이 있다.  
 
-[O(n<sup>2</sup>) - LIS의 길이만](https://github.com/meanjoo/Algorithm/edit/main/LIS.md#blush-on2-%EC%8B%9C%EA%B0%84%EC%97%90-%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98---lis%EC%9D%98-%EA%B8%B8%EC%9D%B4%EB%A7%8C)  
+[O(n<sup>2</sup>) - LIS의 길이만](https://github.com/meanjoo/Algorithm/blob/main/LIS.md#blush-on2-%EC%8B%9C%EA%B0%84%EC%97%90-%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98---lis%EC%9D%98-%EA%B8%B8%EC%9D%B4%EB%A7%8C)  
 :thumbsup: [O(n logn) - LIS의 길이만](https://github.com/meanjoo/Algorithm/edit/main/LIS.md#blush-on-logn-%EC%8B%9C%EA%B0%84%EC%97%90-%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98---lis%EC%9D%98-%EA%B8%B8%EC%9D%B4%EB%A7%8C)  
 :thumbsup: [O(n logn) - LIS의 길이와 수열 모두](https://github.com/meanjoo/Algorithm/edit/main/LIS.md#blush-on-logn-%EC%8B%9C%EA%B0%84%EC%97%90-%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98---lis%EC%9D%98-%EA%B8%B8%EC%9D%B4%EC%99%80-%EC%88%98%EC%97%B4-%EB%AA%A8%EB%91%90)
 <br/><br/>
