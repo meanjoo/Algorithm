@@ -6,6 +6,8 @@ CCW는 외적(cross product, vector product)을 이용하므로 외적에 대해
 벡터의 외적은 3차원에서만 정의되는데, 2차원 벡터의 z 성분을 0이라고 두면 2차원 벡터에 대한 외적을 구할 수 있다.  
 외적을 통해 2차원 벡터에 관한 방향 정보를 알 수 있다.
 
+<img src="https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/crossproduct.jpg" width="800" height=auto/>
+
 2차원 벡터의 외적에서 z 성분인 ***x<sub>1</sub>y<sub>2</sub> - y<sub>1</sub>x<sub>2</sub>*** 의 부호에 따라  
 **a** 뒤에 **b**를 놓았을 때 어느 방향(시계 or 반시계)으로 회전하는지 알 수 있다.
 
