@@ -137,6 +137,7 @@ int lenLIS() {
         lis.push_back(arr[i]);
       else
         lis[lower_bound(lis.begin(), lis.end(), arr[i]) - lis.begin()] = arr[i];
+        // *lower_bound(lis.begin(), lis.end(), arr[i]) = arr[i]; 도 가능
     }
   }
   return (int)lis.size();
