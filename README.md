@@ -5,7 +5,7 @@
 
 ### :grinning: 수학
 [소수](https://github.com/meanjoo/Algorithm/blob/main/%EC%88%98%ED%95%99/prime.md)  
-순열, 조합, 중복순열, 중복조합  
+[(중복)순열과 (중복)조합](https://github.com/meanjoo/Algorithm/blob/main/%EC%88%98%ED%95%99/nr.md)  
 modulo 연산의 사칙연산  
 
 ### :grinning: 기하
