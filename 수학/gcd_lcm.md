@@ -9,3 +9,15 @@ a * b = gcd(a, b) * lcm(a, b)이므로 **lcm(a, b) = a * b / gcd(a, b)** 를 만
 gcd(a, b)를 효율적으로 계산하는 방법인 유클리드 알고리즘(Euclid's algorithm)이 있다.
 
 #### :cowboy_hat_face: pf) 두 정수의 곱은 두 정수의 최대공약수와 최소공배수의 곱과 같다.  
+<img src="https://github.com/meanjoo/LinkPicture/blob/main/gcdlcmrelation.jpg" />
+
+위 그림에서 세 가지 정보를 알아낼 수 있다.  
+① a = gcd(a, b) * a'  
+② b = gcd(a, b) * b'  
+③ lcm(a, b) = gcd(a, b) * a' * b'  
+
+a * b = gcd(a, b) * a' * gcd(a, b) * b' (①, ②)  
+a * b = gcd(a, b) * gcd(a, b) * a' * b'  
+a * b = gcd(a, b) * lcm(a, b) (③)  
+
+Q.E.D.
