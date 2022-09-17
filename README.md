@@ -7,6 +7,7 @@
 [소수](https://github.com/meanjoo/Algorithm/blob/main/%EC%88%98%ED%95%99/prime.md)  
 [(중복)순열과 (중복)조합](https://github.com/meanjoo/Algorithm/blob/main/%EC%88%98%ED%95%99/nr.md)  
 modulo 연산의 사칙연산  
+GCD와 LCM  
 
 ### :grinning: 기하
 [CCW](https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/CCW.md)  
