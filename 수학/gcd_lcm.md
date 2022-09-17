@@ -22,6 +22,12 @@ int gcd(int a, int b) {
 }
 ```
 
+```
+int lcm(int a, int b) {
+  return a * b / gcd(a, b);
+}
+```
+
 #### :cowboy_hat_face: pf) 두 정수의 곱은 두 정수의 최대공약수와 최소공배수의 곱과 같다.  
 <img src="https://github.com/meanjoo/LinkPicture/blob/main/gcdlcmrelation.jpg" />
 
