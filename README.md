@@ -20,7 +20,7 @@
 
 ### 그래프
 + DFS & BFS  
-+ Union Find  
++ [Union Find](https://github.com/meanjoo/Algorithm/blob/main/Graph/UnionFind.md)
 
 ### 문자열
 
