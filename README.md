@@ -76,10 +76,10 @@ for (const auto& a : arr) // &를 통해 복사가 아닌 reference를 가져오
     }
     ```
 
-* 키 값 찾기  
+* 키 검색
   Time Complexity: `O(log n)`
   
-  맵에서 키를 검색하여 키가 존재하면 iterator를 반환하고, 존재하지 않으면 map.end()를 반환한다.
+  맵에서 키를 검색하여 키가 존재하면 iterator를 반환하고, 존재하지 않으면 `map.end()`를 반환한다.
   ```C++
   auto item = m.find("keyword");
   item != m.end() ? cout << "key exist.\n" : cout << "key does not exist.\n";
@@ -90,3 +90,54 @@ for (const auto& a : arr) // &를 통해 복사가 아닌 reference를 가져오
     cout << "key: " << item->first << ' ' << ", value: " << item->second << endl;
   }
   ```
+
+### STL - set
+:cherry_blossom: `#include <set>`
+
+중복을 허용하지 않으며 원소가 정렬된다. (default: 오름차순)
+
+균형 이진 트리로 구현되어 있기 때문에 탐색 시간이 평균, 최악 모두 `O(log n)`이다.
+
+`set<string> s;`라고 가정
+
+* 순회
+
+  + 전통적인 for문
+    ```C++
+    for (auto iter = s.begin(); iter != s.end(); iter++) {
+      cout << *iter << ' ';
+    }
+    cout << endl;
+    ```
+    
+  + range based for statement
+    ```C++
+    for (const auto& elem : s) {
+      cout << elem << ' ';
+    }
+    cout << endl;
+    ```
+    
+* 원소 검색  
+  Time Complexity: `O(log n)`
+  
+  set에서 원소를 검색하여 원소가 존재하면 iterator를 반환하고, 존재하지 않으면 `set.end()`를 반환한다.
+  ```C++
+  auto item = s.find("word");
+  item != s.end() ? cout << "element exist.\n" : cout << "element does not exist.\n";
+  ```
+  ```C++
+  auto item = s.find("word");
+  if (item != s.end()) {
+    cout << "element: " << *item << endl;
+  }
+  ```
+
+### STL - unordered_set
+:cherry_blossom: `#include <unordered_set>`
+
+중복을 허용하지 않으며 원소가 정렬되지 않는다.
+
+원소 삽입과 검색 시 해시 함수를 사용한다. (해시 테이블 기반 저장)  
+따라서 탐색 시간이 평균 `O(1)`이지만, 최악의 경우 `O(n)`이다.  
+해시 충돌이 많이 발생하게 되면 성능이 나빠진다.
