@@ -38,6 +38,8 @@ for (const auto& a : arr) // &를 통해 복사가 아닌 reference를 가져오
 ```
 
 ### STL - map
+:cherry_blossom: `#include <map>`
+
 `map<string, int> m;`이라고 가정
 
 * 순회
@@ -76,6 +78,8 @@ for (const auto& a : arr) // &를 통해 복사가 아닌 reference를 가져오
 
 * 키 값 찾기  
   Time Complexity: `O(log n)`
+  
+  맵에서 키를 검색하여 키가 존재하면 iterator를 반환하고, 존재하지 않으면 map.end()를 반환한다.
   ```C++
   auto item = m.find("keyword");
   item != m.end() ? cout << "key exist.\n" : cout << "key does not exist.\n";
