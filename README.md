@@ -1,32 +1,32 @@
 ### 자료구조
-Stack  
-Queue  
-Deque  
-Segment Tree  
++ Stack
++ Queue
++ Deque
++ [Segment Tree](https://github.com/meanjoo/Algorithm/blob/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/SegmentTree.md)
 
 ### 탐색
-[Binary Search](https://github.com/meanjoo/Algorithm/blob/main/%ED%83%90%EC%83%89/Binary_Search.md)  
-[Parametric Search](https://github.com/meanjoo/Algorithm/blob/main/%ED%83%90%EC%83%89/Parametric_Search.md)  
-[Lower Bound & Upper Bound](https://github.com/meanjoo/Algorithm/blob/main/%ED%83%90%EC%83%89/Lower_Bound_and_Upper_Bound.md)  
++ [Binary Search](https://github.com/meanjoo/Algorithm/blob/main/%ED%83%90%EC%83%89/Binary_Search.md)
++ [Parametric Search](https://github.com/meanjoo/Algorithm/blob/main/%ED%83%90%EC%83%89/Parametric_Search.md)
++ [Lower Bound & Upper Bound](https://github.com/meanjoo/Algorithm/blob/main/%ED%83%90%EC%83%89/Lower_Bound_and_Upper_Bound.md)
 
 ### 수학
-[소수](https://github.com/meanjoo/Algorithm/blob/main/%EC%88%98%ED%95%99/prime.md)  
-[(중복)순열과 (중복)조합](https://github.com/meanjoo/Algorithm/blob/main/%EC%88%98%ED%95%99/nr.md)  
-modulo 연산의 사칙연산  
-[GCD & LCM](https://github.com/meanjoo/Algorithm/blob/main/%EC%88%98%ED%95%99/gcd_lcm.md)  
++ [소수](https://github.com/meanjoo/Algorithm/blob/main/%EC%88%98%ED%95%99/prime.md)
++ [(중복)순열과 (중복)조합](https://github.com/meanjoo/Algorithm/blob/main/%EC%88%98%ED%95%99/nr.md)
++ modulo 연산의 사칙연산
++ [GCD & LCM](https://github.com/meanjoo/Algorithm/blob/main/%EC%88%98%ED%95%99/gcd_lcm.md)
 
 ### 기하
-[CCW](https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/CCW.md)  
++ [CCW](https://github.com/meanjoo/Algorithm/blob/main/%EA%B8%B0%ED%95%98/CCW.md)
 
 ### 그래프
-DFS & BFS  
-Union Find  
++ DFS & BFS  
++ Union Find  
 
 ### 문자열
 
 ### :grinning:
-[LIS](https://github.com/meanjoo/Algorithm/blob/main/LIS.md)  
-Topological Sort
++ [LIS](https://github.com/meanjoo/Algorithm/blob/main/LIS.md)
++ Topological Sort
 
 ---
 `auto`는 C++11에서 처음 등장하여 C++11 이후로 사용 가능
