@@ -144,6 +144,54 @@ for (const auto& a : arr) // &를 통해 복사가 아닌 reference를 가져오
 따라서 탐색 시간이 평균 `O(1)`이지만, 최악의 경우 `O(n)`이다.  
 해시 충돌이 많이 발생하게 되면 성능이 나빠진다.
 
+### STL - priority_queue
+:cherry_blossom: `#include <queue>`
+
+* 생성
+  ```C++
+  priority_queue<int> pq; // Max Heap으로 priority_queue<int, vector<int>, less<int>> pq;와 같음.
+  
+  priority_queue<int, vector<int>, greater<int>> pq; // Min Heap
+  ```
+  
+* 사용자 정의  
+  영어 점수(eng)가 높은 학생이 top을 유지하도록 만들기. 단, 영어 점수가 같다면 수학 점수(mat)가 높은 학생이 top이 되도록
+  
+  ```C++
+  struct Student {
+    string id, name;
+    int mat, eng;
+    
+    Student(string ID, string NAME, int MAT, int ENG) : id(ID), name(NAME), mat(MAT), eng(ENG) {}
+    
+    bool operator<(const Student& stu) const {
+      if (eng == stu.eng)
+        return mat < stu.mat;
+      return eng < stu.eng;
+    }
+  };
+  
+  priority_queue<Student> pq;
+  ```
+  ```C++
+  struct Student {
+    string id, name;
+    int mat, eng;
+    
+    Student(string ID, string NAME, int MAT, int ENG) : id(ID), name(NAME), mat(MAT), eng(ENG) {}
+  };
+  
+  struct comp {
+    bool operator()(const Student& stu1, const Student& stu2) {
+      if (stu1.eng == stu2.eng)
+        return stu1.mat < stu2.mat;
+      return stu1.eng < stu2.eng;
+    }
+  };
+  
+  priority_queue<Student, vector<Student>, comp> pq;
+  ```
+
 ### string 관련
 :cherry_blossom: `#include <string>`
 
