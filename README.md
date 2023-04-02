@@ -143,3 +143,65 @@ for (const auto& a : arr) // &를 통해 복사가 아닌 reference를 가져오
 원소 삽입과 검색 시 해시 함수를 사용한다. (해시 테이블 기반 저장)  
 따라서 탐색 시간이 평균 `O(1)`이지만, 최악의 경우 `O(n)`이다.  
 해시 충돌이 많이 발생하게 되면 성능이 나빠진다.
+
+### string 관련
+:cherry_blossom: `#include <string>`
+
+`string str = "hello world!";`
+
+* 관련 함수
+
+  + `str.find()` - 찾기
+  
+    문자열에서 원하는 문자 또는 문자열의 위치를 찾는다.  
+    return 값: 문자열을 찾았으면 해당 문자열의 시작 위치를 반환, 찾지 못했으면 string::npos를 반환
+  
+    - `str.find("찾을 문자열")` - str의 처음부터 찾을 문자열을 찾음
+    
+      ex. `str.find("hello")` -> `0`  
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      `str.find("world")` -> `6`  
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      `str.find('l')` -> `2`
+      
+    - `str.find("찾을 문자열", 검색 시작 위치)` - str[검색 시작 위치]부터 찾을 문자열을 찾음
+    
+      ex. `str.find('l', 2);` -> `2`  
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      `str.find('l', 4);` -> `9`
+  
+  + `str.substr()`: 문자열 자르기
+  
+    문자열의 일부를 반환한다.  
+    원래 문자열의 [idx, idx + count)까지의 문자열을 반환하며, idx가 원래 문자열의 길이보다 길면 out_of_range 예외를 발생시킨다.  
+    idx + count가 원래 문자열의 길이보다 길면 원래 문자열의 끝까지를 반환한다.
+    
+    - `str.substr(자를 시작 인덱스)` - 자를 시작 인덱스부터 문자열의 끝까지 반환
+    
+      ex. `str.substr(4)` -> `o world!`  
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      `str.substr(6)` -> `world!`
+      
+    - `str.substr(자를 시작 인덱스, 개수)` - 자를 시작 인덱스부터 개수만큼 문자열을 반환
+    
+      ex. `str.substr(5, 3)` -> ` wo`  
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      `str.substr(0, 5)` -> `hello`  
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      `str.substr(1, 100)` -> `ello world!`
+
+* 특정 문자 기준으로 자르기
+
+  ```C++
+  int sep = str.find("특정 문자");
+  int prev = 0;
+  
+  while (sep != string::npos) {
+    string sub = str.substr(prev, sep - prev);
+    v.push_back(sub); // 문자열이 정수인 경우: v.push_back(stoi(sub));
+    prev = sep + 1;
+    sep = str.find("특정 문자", prev);
+  }
+  v.push_back(str.substr(prev)); // 문자열이 정수인 경우: v.push_back(stoi(str.substr(prev)));
+  ```
+
