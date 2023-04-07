@@ -254,3 +254,30 @@ for (const auto& a : arr) // &를 통해 복사가 아닌 reference를 가져오
   v.push_back(str.substr(prev)); // 문자열이 정수인 경우: v.push_back(stoi(str.substr(prev)));
   ```
 
+### 배열 복사
+:cherry_blossom: `#include <algorithm>`
+
+for-loop 대신 복사할 수 있는 방법
+
+`copy(복사할 메모리의 시작을 가리키는 포인터, 복사할 메모리의 마지막을 가리키는 포인터, 복사 받을 메모리의 시작을 가리키는 포인터);`
+
+```C++
+const int SIZE = 50;
+
+int arr1[100], arr2[SIZE], arr3[100][100], arr4[SIZE][SIZE];
+int copy1[100], copy2[SIZE], copy3[100][100], copy4[SIZE][SIZE];
+
+// 1차원 배열 복사
+copy(arr1, arr1 + 100, copy1);
+copy(arr2, arr2 + SIZE, copy2);
+
+// 2차원 배열 복사
+copy(&arr3[0][0], &arr3[0][0] + (100 * 100), &copy3[0][0]);
+copy(&arr4[0][0], &arr4[0][0] + (SIZE * SIZE), &copy4[0][0]);
+
+// 벡터
+v1.resize(SIZE); // 1차원
+v1.resize(SIZE, vector<int>(SIZE)); // 2차원
+
+copy(v.begin(), v.end(), copyv.begin()); // 복사는 1차원 벡터 2차원 벡터 동일
+```
