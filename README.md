@@ -26,10 +26,12 @@
 
 ### 문자열
 
+### Technique
++ 배열 회전
+
 ### :grinning:
 + [LIS](https://github.com/meanjoo/Algorithm/blob/main/LIS.md)
 + Topological Sort
-+ 배열 회전
 
 ---
 `auto`는 C++11에서 처음 등장하여 C++11 이후로 사용 가능
