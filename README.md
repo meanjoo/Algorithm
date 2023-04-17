@@ -27,7 +27,7 @@
 ### 문자열
 
 ### Technique
-+ 배열 회전
++ [배열 회전](https://github.com/meanjoo/Algorithm/blob/main/Technique/rotateArray.md)
 
 ### :grinning:
 + [LIS](https://github.com/meanjoo/Algorithm/blob/main/LIS.md)
