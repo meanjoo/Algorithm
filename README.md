@@ -28,6 +28,7 @@
 
 ### Technique
 + [배열 회전](https://github.com/meanjoo/Algorithm/blob/main/Technique/rotateArray.md)
++ [문자열 자르기](https://github.com/meanjoo/Algorithm/blob/main/Technique/splitString.md)
 
 ### :grinning:
 + [LIS](https://github.com/meanjoo/Algorithm/blob/main/LIS.md)
