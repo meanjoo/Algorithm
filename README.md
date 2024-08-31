@@ -110,7 +110,7 @@ Time Complexity: `O(log n)`
   else {} // key가 없는 경우
   ```
 
-### STL - set
+## STL - set
 :cherry_blossom: `#include <set>`
 
 중복을 허용하지 않으며 원소가 정렬된다. (default: 오름차순)
@@ -152,7 +152,7 @@ Time Complexity: `O(log n)`
   }
   ```
 
-### STL - unordered_set
+## STL - unordered_set
 :cherry_blossom: `#include <unordered_set>`
 
 중복을 허용하지 않으며 원소가 정렬되지 않는다.
@@ -161,7 +161,7 @@ Time Complexity: `O(log n)`
 따라서 탐색 시간이 평균 `O(1)`이지만, 최악의 경우 `O(n)`이다.  
 해시 충돌이 많이 발생하게 되면 성능이 나빠진다.
 
-### STL - priority_queue
+## STL - priority_queue
 :cherry_blossom: `#include <queue>`
 
 * 생성
@@ -209,7 +209,7 @@ Time Complexity: `O(log n)`
   priority_queue<Student, vector<Student>, comp> pq;
   ```
 
-### string 관련
+## string 관련
 :cherry_blossom: `#include <string>`
 
 `string str = "hello world!";`
@@ -270,7 +270,7 @@ Time Complexity: `O(log n)`
   v.push_back(str.substr(prev)); // 문자열이 정수인 경우: v.push_back(stoi(str.substr(prev)));
   ```
 
-### 배열 복사
+## 배열 복사
 :cherry_blossom: `#include <algorithm>`
 
 for-loop 대신 복사할 수 있는 방법
