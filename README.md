@@ -43,48 +43,49 @@ for (auto& a : arr) // &를 통해 복사가 아닌 reference를 가져오지 �
 for (const auto& a : arr) // &를 통해 복사가 아닌 reference를 가져오지 않음. 복사 비용 X. 원래 값 변경 불가. 
 ```
 
-### STL - map
+## STL - map
 :cherry_blossom: `#include <map>`
 
 `map<string, int> m;`이라고 가정
+### 순회
 
-* 순회
++ while-loop 및 전통적인 for문
+  ```C++ 
+  auto iter = m.begin(); // type of m is map<string, int>::iterator
+  while (iter != m.end()) {
+    cout << "key: " << iter->first << ' ' << ", value: " << iter->second << endl;
+    iter++;
+  }
+  ```
+  ```C++
+  for (auto iter = m.begin(); iter != m.end(); iter++) {
+    cout << "key: " << iter->first << ' ' << ", value: " << iter->second << endl;
+  }
+  ```
 
-  + while-loop 및 전통적인 for문
-    ```C++ 
-    auto iter = m.begin(); // type of m is map<string, int>::iterator
-    while (iter != m.end()) {
-      cout << "key: " << iter->first << ' ' << ", value: " << iter->second << endl;
-      iter++;
-    }
-    ```
-    ```C++
-    for (auto iter = m.begin(); iter != m.end(); iter++) {
-      cout << "key: " << iter->first << ' ' << ", value: " << iter->second << endl;
-    }
-    ```
-  
-  + range based for statement
-  
-    C++11에 range based for statement(범위 기반 for문)가 추가되었다. 이를 이용해서 보다 간단하게 map을 순회할 수 있다.
-    ```C++
-    for (const auto& item : m) {
-      cout << "key: " << item.first << ' ' << ", value: " << item.second << endl;
-    }
-    ```
-    
-  + range based for statement 2
-  
-    이 방법은 C++17 이후에서 지원된다.
-    ```C++
-    for (const auto& [key, value] : m) {
-      cout << "key: " << key << ' ' << ", value: " << value << endl;
-    }
-    ```
++ range based for statement
 
-* 키 검색
-  Time Complexity: `O(log n)`
-  
+  C++11에 range based for statement(범위 기반 for문)가 추가되었다. 이를 이용해서 보다 간단하게 map을 순회할 수 있다.
+  ```C++
+  for (const auto& item : m) {
+    cout << "key: " << item.first << ' ' << ", value: " << item.second << endl;
+  }
+  ```
+
++ range based for statement 2
+
+  이 방법은 C++17 이후에서 지원된다.
+  ```C++
+  for (const auto& [key, value] : m) {
+    cout << "key: " << key << ' ' << ", value: " << value << endl;
+  }
+  ```
+
+### 키 검색
+Time Complexity: `O(log n)`
+
+- `find()` 사용
+
   맵에서 키를 검색하여 키가 존재하면 iterator를 반환하고, 존재하지 않으면 `map.end()`를 반환한다.
   ```C++
   auto item = m.find("keyword");
@@ -95,6 +96,18 @@ for (const auto& a : arr) // &를 통해 복사가 아닌 reference를 가져오
   if (item != m.end()) {
     cout << "key: " << item->first << ' ' << ", value: " << item->second << endl;
   }
+  ```
+
+- `count()` 사용 *얘도 O(log n)인가..?*
+
+  단순히 key가 있는지 조사만 하는 것이라면 `count()`를 쓰는 게 더 간편하다. `count()`는 map에 있는 key의 요소 수를 가져온다. map은 key가 고유하기 때문에 key가 있다면 1, 없으면 0을 반환한다.
+  ```c++
+  if (m.count("keyword")) {} // key가 있는 경우
+  else {} // key가 없는 경우
+  ```
+  ```c++
+  if (m.count("keyword") != 0) {} // key가 있는 경우
+  else {} // key가 없는 경우
   ```
 
 ### STL - set
