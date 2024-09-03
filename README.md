@@ -270,6 +270,15 @@ Time Complexity: `O(log n)`
   v.push_back(str.substr(prev)); // 문자열이 정수인 경우: v.push_back(stoi(str.substr(prev)));
   ```
 
+* string으로 변환
+  
+  - `to_string()` 사용
+    
+    ```C++
+    int n1 = 10;
+    string s1 = to_string(n1);
+    ```
+
 ## 배열 복사
 :cherry_blossom: `#include <algorithm>`
 
