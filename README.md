@@ -119,6 +119,11 @@ Time Complexity: `O(log n)`
 
 `set<string> s;`라고 가정
 
+- `s.insert(str);`
+  - str을 s에 삽입
+- `s.clear();`
+  - s 초기화
+
 * 순회
 
   + 전통적인 for문
@@ -160,6 +165,9 @@ Time Complexity: `O(log n)`
 원소 삽입과 검색 시 해시 함수를 사용한다. (해시 테이블 기반 저장)  
 따라서 탐색 시간이 평균 `O(1)`이지만, 최악의 경우 `O(n)`이다.  
 해시 충돌이 많이 발생하게 되면 성능이 나빠진다.
+
+문자열 길이마다 unordered set을 가지는 것보다 모든 길이의 문자열에 대한 unordered set을 가지는 것이 시간 차이가 꽤 날 수 있다.
+해시 충돌이 많이 발생하게 되면 성능이 나빠지기 때문이다. [문제 참고](https://www.acmicpc.net/problem/11478)
 
 ## STL - priority_queue
 :cherry_blossom: `#include <queue>`
@@ -234,26 +242,23 @@ Time Complexity: `O(log n)`
       ex. `str.find('l', 2);` -> `2`  
       &nbsp;&nbsp;&nbsp;&nbsp;
       `str.find('l', 4);` -> `9`
+
+### 문자열 자르기
+`str.substr()`
   
-  + `str.substr()`: 문자열 자르기
-  
-    문자열의 일부를 반환한다.  
-    원래 문자열의 [idx, idx + count)까지의 문자열을 반환하며, idx가 원래 문자열의 길이보다 길면 out_of_range 예외를 발생시킨다.  
-    idx + count가 원래 문자열의 길이보다 길면 원래 문자열의 끝까지를 반환한다.
-    
-    - `str.substr(자를 시작 인덱스)` - 자를 시작 인덱스부터 문자열의 끝까지 반환
-    
-      ex. `str.substr(4)` -> `o world!`  
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      `str.substr(6)` -> `world!`
-      
-    - `str.substr(자를 시작 인덱스, 개수)` - 자를 시작 인덱스부터 개수만큼 문자열을 반환
-    
-      ex. `str.substr(5, 3)` -> ` wo`  
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      `str.substr(0, 5)` -> `hello`  
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      `str.substr(1, 100)` -> `ello world!`
+문자열의 일부를 반환한다.  
+원래 문자열의 [idx, idx + count)까지의 문자열을 반환하며, idx가 원래 문자열의 길이보다 길면 out_of_range 예외를 발생시킨다.  
+idx + count가 원래 문자열의 길이보다 길면 원래 문자열의 끝까지를 반환한다.
+
+- `str.substr(자를 시작 인덱스)` - 자를 시작 인덱스부터 문자열의 끝까지 반환
+  - `str.substr(4)` -> `o world!`
+  - `str.substr(6)` -> `world!`
+
+- `str.substr(자를 시작 인덱스, 개수)` - 자를 시작 인덱스부터 개수만큼 문자열을 반환
+  - `str.substr(5, 3)` -> ` wo`
+  - `str.substr(0, 5)` -> `hello`
+  - `str.substr(1, 100)` -> `ello world!`
+
 
 * 특정 문자 기준으로 자르기
 
@@ -270,14 +275,10 @@ Time Complexity: `O(log n)`
   v.push_back(str.substr(prev)); // 문자열이 정수인 경우: v.push_back(stoi(str.substr(prev)));
   ```
 
-* string으로 변환
-  
-  - `to_string()` 사용
-    
-    ```C++
-    int n1 = 10;
-    string s1 = to_string(n1);
-    ```
+### 변환
+- int <-> string
+  - `stoi(numberString)` : string -> int
+  - `to_string(number)` : int -> string
 
 ## 배열 복사
 :cherry_blossom: `#include <algorithm>`
